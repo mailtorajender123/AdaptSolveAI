@@ -474,12 +474,6 @@ Recommended License:
 
 ---
 
-#  Contributing
-
-Contributions are welcome!
-
-Feel free to fork the repository, create a feature branch, and submit a pull request.
-
 
 
 ---
