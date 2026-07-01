@@ -1,0 +1,71 @@
+seed: 42
+device: auto
+
+output_dir: results
+checkpoint_dir: checkpoints
+
+experiment:
+  domain: scheduling
+  train_steps: 2500
+  pretrain_steps: 400
+  eval_episodes: 20
+  episode_length: 120
+  shift_levels: [ID, S1, S2, S3]
+  baselines: [no_adapt, adabn, entropy_min, distill_only, adaptsolveai]
+
+environment:
+  num_machines: 4
+  max_queue: 12
+  episode_length: 120
+  base_arrival_prob: 0.55
+  processing_time_low: 1
+  processing_time_high: 10
+  deadline_low: 8
+  deadline_high: 35
+  burst_prob: 0.05
+  seed: 42
+
+model:
+  state_dim: 28
+  latent_dim: 128
+  hidden_dim: 128
+  num_actions: 4
+  num_heads: 4
+  adapter_dim: 24
+  dropout: 0.05
+
+ssl:
+  cpc_weight: 1.0
+  mae_weight: 0.5
+  distill_weight: 0.3
+  safety_weight: 1.0
+  mask_ratio: 0.25
+  temperature: 0.2
+
+policy_training:
+  batch_size: 128
+  lr: 0.0008
+  weight_decay: 0.00001
+  gamma: 0.98
+  entropy_coef: 0.01
+
+adaptation:
+  enabled: true
+  buffer_capacity: 10000
+  batch_size: 32
+  lr: 0.0006
+  max_steps: 3
+  latency_budget_ms: 3.0
+  trigger_entropy_quantile: 0.90
+  shift_threshold: 3.0
+  priority_novelty_weight: 0.5
+  priority_safety_weight: 0.3
+  priority_fisher_weight: 0.2
+  priority_alpha: 0.6
+  ewc_beta: 0.001
+  min_buffer_before_adapt: 64
+
+safety:
+  deadline_slack_margin: 0.05
+  max_utilization: 1.0
+  fallback: least_loaded

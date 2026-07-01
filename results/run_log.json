@@ -1,0 +1,101 @@
+[
+  {
+    "event": "start",
+    "device": "cpu",
+    "time": "2026-07-01T11:18:12"
+  },
+  {
+    "event": "ssl_pretrain_done",
+    "last": {
+      "step": 4,
+      "cpc": 2.1190640926361084,
+      "mae": 0.13515032827854156,
+      "distill": 0.00109756737947464,
+      "safety": 0.07978664338588715,
+      "ssl_total": 2.2667551040649414
+    },
+    "time": "2026-07-01T11:18:13"
+  },
+  {
+    "event": "policy_train_done",
+    "last": {
+      "step": 9,
+      "policy_loss": 0.9859213829040527,
+      "imit_acc": 0.8125
+    },
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "checkpoint_saved",
+    "path": "checkpoints/selfsolvenet_scheduling.pt",
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "eval_start",
+    "baseline": "no_adapt",
+    "shift": "ID",
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "eval_done",
+    "baseline": "no_adapt",
+    "shift": "ID",
+    "mean_return": 23.620000147819518,
+    "mean_safety_violation_rate": 0.0,
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "eval_start",
+    "baseline": "no_adapt",
+    "shift": "S2",
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "eval_done",
+    "baseline": "no_adapt",
+    "shift": "S2",
+    "mean_return": -14.659999752044678,
+    "mean_safety_violation_rate": 0.3,
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "eval_start",
+    "baseline": "adaptsolveai",
+    "shift": "ID",
+    "time": "2026-07-01T11:18:14"
+  },
+  {
+    "event": "eval_done",
+    "baseline": "adaptsolveai",
+    "shift": "ID",
+    "mean_return": 22.900000238418578,
+    "mean_safety_violation_rate": 0.0,
+    "time": "2026-07-01T11:18:15"
+  },
+  {
+    "event": "eval_start",
+    "baseline": "adaptsolveai",
+    "shift": "S2",
+    "time": "2026-07-01T11:18:15"
+  },
+  {
+    "event": "eval_done",
+    "baseline": "adaptsolveai",
+    "shift": "S2",
+    "mean_return": 22.610000467300413,
+    "mean_safety_violation_rate": 0.15,
+    "time": "2026-07-01T11:18:15"
+  },
+  {
+    "event": "finished",
+    "raw_results": "results/episode_results.csv",
+    "summary_results": "results/summary_results.csv",
+    "plots": [
+      "results/return.png",
+      "results/safety_violation_rate.png",
+      "results/deadline_miss_rate.png",
+      "results/avg_latency_ms.png"
+    ],
+    "time": "2026-07-01T11:18:16"
+  }
+]
