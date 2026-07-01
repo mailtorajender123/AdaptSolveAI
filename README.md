@@ -1,3 +1,4 @@
+https://doi.org/10.5281/zenodo.21103817
 #  AdaptSolveAI
 ### Adaptive Self-Supervised Learning for Real-Time Problem Solving in Autonomous Systems
 
